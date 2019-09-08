@@ -6,8 +6,8 @@ router.get('/', (req, res) => {
 });
 
 router.post('/send', async (req, res) => {
-    console.log(req.body);
-
+    
+    // Survey model creation.
     const newSurvey = new surveyModel({
         tamanoEmpresa: req.body.tamanoempresa,
         tipoEmpresa: req.body.tipoempresa,
@@ -18,11 +18,13 @@ router.post('/send', async (req, res) => {
         vendriaDeNuevo: req.body.volveria,
         razonParaVolverOno: req.body.razon
     });
-
+    
+    // Survey model saving.
     const saveSurvey = await newSurvey.save().catch(reason => {
         console.log(`Error: ${reason}`);
       });
 
+    // Redirect to index page for another survey creation.
     res.redirect('/');
 
 });
