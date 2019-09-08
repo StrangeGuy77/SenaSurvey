@@ -15,28 +15,26 @@ app.engine(".hbs", exphbs({
     partialsDir: path.join(app.get('views'), 'partials'),
     extname: ".hbs"
 }));
-
-// Se establece el view engine después de ser configurado.
 app.set('view engine', '.hbs');
 
 // Middlewares
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
-// Conexión a base de datos
+// Database connection.
 mongoose.connect(database.URI, {useNewUrlParser: true}).then((value) => {
     console.log(`Conectado a la base de datos`)
 }).catch((reason) => {
     console.log(`Error en la conexión ${reason}`)
 });
 
-// Enrutador
+// Router.
 app.use(require("./routes/index"));
 
-// Archivos estáticos
+// Static files.
 app.use(express.static(path.join(__dirname, "public")));
 
-// Inicialización del servidor.
+// Server initialization.
 app.listen(app.get("port"), () => {
   console.log("connected to port: ", app.get("port"));
 });
