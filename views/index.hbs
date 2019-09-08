@@ -1,0 +1,95 @@
+<style>
+    body {
+        background-color:azure
+    }
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="card">
+                <div class="card-header mx-auto">
+                    <h1>Por favor, rellene la encuesta a continuación</h1>
+                </div>
+                <div class="card-body mx-auto">
+                    <form action="/send" method="POST" enctype="application/x-www-form-urlencoded">
+                        <div class="form-group">
+                            <p>¿Cuál es el tamaño de su empresa?</p>
+                            <input type="radio" name="tamanoempresa" value="Emprendimiento" /> Emprendimiento<br />
+                            <input type="radio" name="tamanoempresa" value="Pequena" /> Pequeña<br/>
+                            <input type="radio" name="tamanoempresa" value="Mediana" /> Mediana<br/>
+                            <input type="radio" name="tamanoempresa" value="Gran empresa" required/> Gran empresa
+                        </div>
+                        <div class="form-group">
+                            <p>¿Es usted...?</p>
+                            <input type="radio" name="tipoempresa" value="Fabricante" class="another-kind"/> Fabricante<br/>
+                            <input type="radio" name="tipoempresa" value="Comercializador" class="another-kind"/> Comercializador<br />
+                            <input type="radio" name="tipoempresa" id="another-kind" class="another-kind" value="Otro" required/> Otro<br />
+                            <div id="anotherkind-enterprise" style="display: none">
+                                <input type="text" name="tipoempresa" placeholder="Indique el tipo de empresa"/><br/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <p>¿Cómo se enteró del evento de TecnoCuero?</p>
+                            <input type="radio" name="divulgacion" value="Amigo" /> Recomendación de un amigo<br />
+                            <input type="radio" name="divulgacion" value="Invitacion" /> Invitación directa del
+                            SENA<br />
+                            <input type="radio" name="divulgacion" value="Medios" required/> Medios de comunicación digital
+                        </div>
+                        <div class="form-group">
+                            <p>¿Cuál es su mercado objetivo o segmento?</p>
+                            <input type="radio" name="mercado" value="Bebe" class="another-market"/> Bebé<br/>
+                            <input type="radio" name="mercado" value="Nino" class="another-market"/> Niño<br/>
+                            <input type="radio" name="mercado" value="Joven" class="another-market"/> Joven<br/>
+                            <input type="radio" name="mercado" value="Hombre" class="another-market"/> Hombre<br/>
+                            <input type="radio" name="mercado" value="Mujer" class="another-market"/> Mujer<br/>
+                            <input type="radio" name="mercado" value="Otro" id="another-market" class="another-market" required/> Otro <br/>
+                            <div id="anothermarket" style="display: none">
+                                <input type="text" name="mercado" placeholder=" Indique el mercado objetivo de su empresa"/><br/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <p>¿Maneja usted marca propia?</p>
+                            <input type="radio" name="marca" value="Si" /> Si<br />
+                            <input type="radio" name="marca" value="No" required/> No
+                        </div>
+                        <div class="form-group">
+                            <p>¿Cuáles de estos servicios que ofrece el SENA conocía y cuáles son útiles para su
+                                empresa?</p>
+                            <input type="radio" name="servicios" value="Senova" /> SENOVA<br />
+                            <input type="radio" name="servicios" value="Laboratorio" /> Laboratorio<br />
+                            <input type="radio" name="servicios" value="Emprendimiento" /> Emprendimiento<br />
+                            <input type="radio" name="servicios" value="Certificacion de competencias laborales" /> Certificación
+                            de
+                            competencias laborales<br />
+                            <input type="radio" name="servicios" value="Formacion continua especializada" /> Formación continua
+                            especializada<br />
+                            <input type="radio" name="servicios" value="Tecnoparque" /> Tecnoparque<br />
+                            <input type="radio" name="servicios" value="Produccion de centros o servicios tecnologicos"/> Producción de centros
+                            o
+                            servicios tecnológicos (celda de producción)<br />
+                            <input type="radio" name="servicios" value="Formacion profesional" required/> Formación
+                            profesional
+                            (media técnica - técnicos - tecnólogos)
+                        </div>
+                        <div class="form-group">
+                            <p>¿Nos acompañaría de nuevo en otro evento?</p>
+                            <input type="radio" name="volveria" value="Si" /> Si<br />
+                            <input type="radio" name="volveria" value="No" required/> No<br />
+                            <br>¿Por qué? <br/>
+                            <textarea name="razon" rows="3" placeholder="Su respuesta..." required></textarea>
+                        </div>
+                        <p></p>
+                        <div class="form-group">
+                            <button class="btn btn-success">
+                                <i class="far fa-share-square"></i> Enviar encuesta
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/clean-blog.js"></script>
